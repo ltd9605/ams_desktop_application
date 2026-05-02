@@ -82,9 +82,13 @@ cd ams_desktop_application
 ```
 ###⚙️ 2. Configure Backend Connection
 Open project in your IDE (recommended: IntelliJ IDEA)
+
 Go to:
+
 src/main/java/com/ams/ams_app/network/ApiClient.java
+
 src/main/java/com/ams/ams_app/util/NetworkUtil.java
+
 Update base URL if needed:
 ```bash
 private static final String BASE_URL = "your_backend_base_url";
