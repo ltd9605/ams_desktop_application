@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ams.ams_app.controller.ImportController">
+    <children>
+        <!-- VBox chính phủ toàn bộ diện tích Center -->
+        <VBox spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label maxWidth="1.7976931348623157E308" styleClass="title-label" stylesheets="@../../css/style.css" text="Nhập Dữ Liệu (Import Excel)">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+
+                <!-- VBox này chứa nội dung chính, được thiết lập để tự giãn và căn giữa -->
+                <VBox alignment="CENTER" spacing="30.0" styleClass="childrenPane" stylesheets="@../../css/style.css" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                    </padding>
+                    <children>
+                        <!-- HBox chọn loại dữ liệu -->
+                        <HBox alignment="CENTER" spacing="20.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Loại dữ liệu:">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="cbDataType" maxWidth="500.0" prefHeight="35.0" prefWidth="350.0" promptText="-- Chọn loại dữ liệu --" styleClass="search-field" stylesheets="@../../css/style.css" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+
+                        <!-- HBox chọn file -->
+                        <HBox alignment="CENTER" spacing="20.0">
+                            <children>
+                                <Label prefWidth="130.0" text="Tập tin Excel:">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Button mnemonicParsing="false" onAction="#handleChooseFile" prefHeight="35.0" prefWidth="120.0" styleClass="btn-2" stylesheets="@../../css/style.css" text="Chọn file..." />
+                                <Label fx:id="lbFileName" maxWidth="360.0" text="Chưa chọn file" textFill="#666666" HBox.hgrow="ALWAYS">
+                                    <font>
+                                        <Font name="System Italic" size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+
+                        <!-- Khu vực Progress Bar -->
+                        <VBox alignment="CENTER" spacing="10.0" maxWidth="650.0" VBox.vgrow="NEVER">
+                            <children>
+                                <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" prefHeight="25.0" progress="-1.0" visible="false" />
+                            </children>
+                        </VBox>
+
+                        <!-- Nút thực hiện -->
+                        <HBox alignment="CENTER" spacing="20.0">
+                            <children>
+                                <Button fx:id="btnImport" mnemonicParsing="false" onAction="#handleImport" prefHeight="45.0" prefWidth="200.0" styleClass="search-button" stylesheets="@../../css/style.css" text="Tiến hành Import">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+</AnchorPane>

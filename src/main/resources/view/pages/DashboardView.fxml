@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ams.ams_app.controller.DashBoardController">
+    <children>
+        <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <content>
+                <VBox spacing="20.0" stylesheets="@../../css/style.css">
+                    <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
+                    <children>
+                        <!-- Thẻ thống kê tóm tắt -->
+                        <HBox spacing="15.0">
+                            <children>
+                                <VBox styleClass="card-stat" HBox.hgrow="ALWAYS">
+                                    <HBox alignment="CENTER_LEFT" spacing="10">
+                                        <ImageView fitHeight="35" fitWidth="35"><image><Image url="@../../image/group.png" /></image></ImageView>
+                                        <VBox><Label text="Tổng thí sinh" styleClass="subtitle-label" /><Label fx:id="totalStudentsLbl" text="0" styleClass="title-label" /></VBox>
+                                    </HBox>
+                                </VBox>
+                                <VBox styleClass="card-stat" HBox.hgrow="ALWAYS">
+                                    <HBox alignment="CENTER_LEFT" spacing="10">
+                                        <ImageView fitHeight="35" fitWidth="35"><image><Image url="@../../image/checkmark.png" /></image></ImageView>
+                                        <VBox><Label text="Trúng tuyển" styleClass="subtitle-label" /><Label fx:id="acceptedStudentsLbl" text="0" styleClass="title-label" /></VBox>
+                                    </HBox>
+                                </VBox>
+                                <VBox styleClass="card-stat" HBox.hgrow="ALWAYS">
+                                    <HBox alignment="CENTER_LEFT" spacing="10">
+                                        <ImageView fitHeight="35" fitWidth="35"><image><Image url="@../../image/stopwatch.png" /></image></ImageView>
+                                        <VBox><Label text="Đang chờ" styleClass="subtitle-label" /><Label fx:id="pendingStudentsLbl" text="0" styleClass="title-label" /></VBox>
+                                    </HBox>
+                                </VBox>
+                                <VBox styleClass="card-stat" HBox.hgrow="ALWAYS">
+                                    <HBox alignment="CENTER_LEFT" spacing="10">
+                                        <ImageView fitHeight="35" fitWidth="35"><image><Image url="@../../image/mortarboard.png" /></image></ImageView>
+                                        <VBox><Label text="Ngành" styleClass="subtitle-label" /><Label fx:id="totalMajorsLbl" text="0" styleClass="title-label" /></VBox>
+                                    </HBox>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <!-- Cột trái: Biểu đồ -->
+                                <VBox spacing="20" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <VBox styleClass="childrenPane">
+                                            <Label styleClass="title-label" text="Top 3 Ngành đăng ký nhiều nhất" />
+                                            <BarChart fx:id="barChartTop3" legendVisible="false" prefHeight="280">
+                                                <xAxis><CategoryAxis fx:id="xAxisTop3" side="BOTTOM" /></xAxis>
+                                                <yAxis><NumberAxis side="LEFT" /></yAxis>
+                                            </BarChart>
+                                        </VBox>
+                                        <VBox styleClass="childrenPane">
+                                            <Label styleClass="title-label" text="So sánh Chỉ tiêu và Thực tế (Top 3 hot)" />
+                                            <BarChart fx:id="barChartEmptyQuota" prefHeight="280">
+                                                <xAxis><CategoryAxis fx:id="xAxisQuota" side="BOTTOM" /></xAxis>
+                                                <yAxis><NumberAxis side="LEFT" /></yAxis>
+                                            </BarChart>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                                <!-- Cột phải: Tỉ lệ & Danh sách -->
+                                <VBox prefWidth="320" spacing="20">
+                                    <children>
+                                        <VBox styleClass="childrenPane">
+                                            <Label styleClass="title-label" text="Tỉ lệ Đậu / Rớt" />
+                                            <PieChart fx:id="pieChartPassFail" prefHeight="250" />
+                                        </VBox>
+                                        <VBox styleClass="childrenPane" VBox.vgrow="ALWAYS">
+                                            <Label styleClass="title-label" text="Điểm trung bình các ngành" />
+                                            <ListView fx:id="listAverageScores" styleClass="modern-list" VBox.vgrow="ALWAYS" />
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

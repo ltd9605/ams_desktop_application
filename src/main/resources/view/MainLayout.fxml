@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ams.ams_app.controller.MainLayoutController">
+    <children>
+        <!-- Ảnh nền phủ kín AnchorPane -->
+        <ImageView fitHeight="${mainPane.height}" fitWidth="${mainPane.width}" pickOnBounds="true" preserveRatio="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image><Image url="@../image/login_background.jpg" /></image>
+        </ImageView>
+
+        <BorderPane fx:id="mainPane" stylesheets="@../css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <HBox alignment="CENTER_LEFT" prefHeight="80.0" styleClass="nav-tab" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                            <HBox.margin><Insets left="20.0" right="20.0" /></HBox.margin>
+                            <image><Image url="@../image/6785648.png" /></image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT">
+                            <children>
+                                <Label styleClass="title-label" text="Admission Management System" />
+                                <Label styleClass="subtitle-label" text="Sai Gon University" />
+                            </children>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT" spacing="15.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Hello!" />
+                                <Label fx:id="lbUsername" styleClass="title-label" text="Admin" />
+                                <ImageView fx:id="avatarImg" fitHeight="42.0" fitWidth="42.0">
+                                    <image><Image url="@../image/admin-avata.png" /></image>
+                                </ImageView>
+                                <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#handleLogout" styleClass="logout-btn" />
+                            </children>
+                            <padding><Insets right="20.0" /></padding>
+                        </HBox>
+                    </children>
+                </HBox>
+            </top>
+            <left>
+                <VBox prefHeight="610.0" prefWidth="320.0" spacing="5.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="btnDashboard" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoDashboard" styleClass="menu-btn" text="Tổng quan" />
+                        <Button fx:id="btnStudentList" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoStudents" styleClass="menu-btn" text="Danh sách học sinh" />
+                        <Button fx:id="btnAdmission" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoAdmission" styleClass="menu-btn" text="Xét tuyển" />
+                        <Button fx:id="btnPrint" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoPrint" styleClass="menu-btn" text="In giấy báo" />
+                        <Button fx:id="btnUserMgmt" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoUser" styleClass="menu-btn" text="Người dùng" />
+                        <Button fx:id="btnImport" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoFileManagement" styleClass="menu-btn" text="Nhập dữ liệu" />
+                        <Button fx:id="btnSystem" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoSystem" styleClass="menu-btn" text="Hệ thống" />
+                        <VBox VBox.vgrow="ALWAYS" /> <!-- Đẩy nút Status xuống dưới -->
+                        <Button fx:id="btnStatus" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="btn-status" text="Trạng thái" />
+                    </children>
+                    <padding><Insets bottom="10.0" left="5.0" right="5.0" top="10.0" /></padding>
+                </VBox>
+            </left>
+            <center>
+                <StackPane fx:id="contentArea" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER" />
+            </center>
+            <bottom>
+                <HBox alignment="CENTER" prefHeight="54.0" prefWidth="1080.0" styleClass="nav-tab">
+                    <children>
+                        <Label text="© 2026 Admissions Management System. All rights reserved." />
+                    </children>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

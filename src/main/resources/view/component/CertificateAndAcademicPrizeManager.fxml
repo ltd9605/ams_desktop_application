@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ams.ams_app.controller.CertificateManagerController">
+    <children>
+        <!-- VBox chính bám sát 4 cạnh để tự co dãn -->
+        <VBox spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label maxWidth="1.7976931348623157E308" styleClass="title-label" stylesheets="@../../css/style.css" text="Quản lý Chứng chỉ &amp; Giải thưởng">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+
+                <!-- Phần Chứng chỉ -->
+                <VBox spacing="10.0" styleClass="childrenPane" stylesheets="@../../css/style.css" VBox.vgrow="SOMETIMES">
+                    <children>
+                        <Label styleClass="subtitle-label" stylesheets="@../../css/style.css" text="Thêm chứng chỉ ngoại ngữ/tin học :" />
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <children>
+                                <ComboBox fx:id="certificateCombo" maxWidth="1.7976931348623157E308" prefHeight="40.0" promptText="Chọn chứng chỉ từ danh sách..." styleClass="menu-btn" stylesheets="@../../css/style.css" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                </VBox>
+
+                <!-- Phần Giải thưởng -->
+                <VBox spacing="10.0" styleClass="childrenPane" stylesheets="@../../css/style.css" VBox.vgrow="SOMETIMES">
+                    <children>
+                        <Label styleClass="subtitle-label" stylesheets="@../../css/style.css" text="Thêm giải thưởng học thuật :" />
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <children>
+                                <ComboBox fx:id="prizeCombo" maxWidth="1.7976931348623157E308" prefHeight="40.0" promptText="Chọn giải thưởng từ danh sách..." styleClass="menu-btn" stylesheets="@../../css/style.css" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                </VBox>
+
+                <!-- Thanh nút bấm căn phải -->
+                <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                    <children>
+                        <Button fx:id="btnSave" mnemonicParsing="false" onAction="#handleSave" prefHeight="40.0" prefWidth="120.0" styleClass="search-button" stylesheets="@../../css/style.css" text="Lưu thông tin" />
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</AnchorPane>

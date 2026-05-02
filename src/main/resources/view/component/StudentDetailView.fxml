@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ams.ams_app.controller.StudentDetailController">
+    <children>
+        <!-- VBox chính bao phủ toàn bộ vùng Center của BorderPane -->
+        <VBox spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#handleBack" prefHeight="30.0" prefWidth="80.0" styleClass="back-btn" stylesheets="@../../css/style.css" text="Trở lại" />
+
+                <HBox spacing="20.0" styleClass="childrenPane" stylesheets="@../../css/style.css" VBox.vgrow="SOMETIMES">
+                    <children>
+                        <!-- Cột trái: Thông tin cá nhân thí sinh -->
+                        <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label fx:id="fullNameTxt" maxWidth="1.7976931348623157E308" stylesheets="@../../css/style.css" text="Tên thí sinh">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                                <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label styleClass="subtitle-label" stylesheets="@../../css/style.css" text="Số báo danh" />
+                                                <TextField fx:id="registrationNumberTxt" editable="false" maxWidth="1.7976931348623157E308" styleClass="search-field" stylesheets="@../../css/style.css" />
+                                                <Label styleClass="subtitle-label" stylesheets="@../../css/style.css" text="Căn cước công dân" />
+                                                <TextField fx:id="citizenIdTxt" editable="false" maxWidth="1.7976931348623157E308" styleClass="search-field" stylesheets="@../../css/style.css" />
+                                                <Label styleClass="subtitle-label" stylesheets="@../../css/style.css" text="Ngày sinh" />
+                                                <TextField fx:id="dobTxt" editable="false" maxWidth="1.7976931348623157E308" styleClass="search-field" stylesheets="@../../css/style.css" />
+                                            </children>
+                                        </VBox>
+                                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <Label styleClass="subtitle-label" stylesheets="@../../css/style.css" text="Mã học sinh" />
+                                                <TextField fx:id="studentIdTxt" editable="false" maxWidth="1.7976931348623157E308" styleClass="search-field" stylesheets="@../../css/style.css" />
+                                                <Label styleClass="subtitle-label" stylesheets="@../../css/style.css" text="Giới tính" />
+                                                <TextField fx:id="genderTxt" editable="false" maxWidth="1.7976931348623157E308" styleClass="search-field" stylesheets="@../../css/style.css" />
+                                                <Label styleClass="subtitle-label" stylesheets="@../../css/style.css" text="Điểm ưu tiên" />
+                                                <TextField fx:id="priorityPointsTxt" editable="false" maxWidth="1.7976931348623157E308" styleClass="search-field" stylesheets="@../../css/style.css" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Cột phải: Bảng điểm và Chứng chỉ -->
+                        <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Bảng điểm">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ScrollPane fitToWidth="true" prefHeight="150.0" styleClass="badge-info" VBox.vgrow="ALWAYS">
+                                    <content>
+                                        <VBox fx:id="scoreContainer" spacing="10.0" style="-fx-background-color: white;">
+                                            <padding>
+                                                <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                            </padding>
+                                        </VBox>
+                                    </content>
+                                </ScrollPane>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                    <children>
+                                        <Label maxWidth="1.7976931348623157E308" text="Chứng chỉ &amp; Giải thưởng" HBox.hgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Button mnemonicParsing="false" onAction="#openPopup" prefHeight="25.0" prefWidth="40.0" text="+" />
+                                    </children>
+                                </HBox>
+                                <ScrollPane fitToWidth="true" prefHeight="150.0" styleClass="badge-info" VBox.vgrow="ALWAYS">
+                                    <content>
+                                        <VBox fx:id="certificateContainer" spacing="10.0" style="-fx-background-color: white;">
+                                            <padding>
+                                                <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                            </padding>
+                                        </VBox>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="15.0" />
+                    </padding>
+                </HBox>
+
+                <!-- Phần dưới: Danh sách nguyện vọng xét tuyển -->
+                <VBox spacing="5.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label text="Danh sách nguyện vọng">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <ScrollPane fitToWidth="true" prefHeight="200.0" stylesheets="@../../css/style.css" VBox.vgrow="ALWAYS">
+                            <content>
+                                <VBox fx:id="aspirationContainer" spacing="10.0" style="-fx-background-color: white;">
+                                    <padding>
+                                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                    </padding>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+</AnchorPane>

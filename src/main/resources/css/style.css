@@ -1,0 +1,382 @@
+.nav-tab{
+    -fx-background-color: #fefefe;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0.3, 0, 4);
+}
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+.subtitle-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+.search-field {
+    -fx-background-color: #e5e7eb;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: transparent;
+    -fx-padding: 8 15;
+}
+.text-field-error {
+    -fx-border-color: red;
+    -fx-border-width: 1px;
+}
+/* ===== Container chính ===== */
+.WelcomePane {
+    -fx-background-color: linear-gradient(to bottom right, #0f2a44, #1b3f66);
+    -fx-background-radius: 10;
+}
+
+/* ===== ADMISSION (chữ trắng lớn) ===== */
+.label-admission {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 2px;
+}
+
+/* ===== MANAGEMENT (chữ xanh nhạt) ===== */
+.label-management {
+    -fx-text-fill: #5fa8ff;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
+
+/* ===== SYSTEM (chữ nhỏ hơn, nhạt hơn) ===== */
+.label-system {
+    -fx-text-fill: #d9e1ec;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+/* ===== Optional: hiệu ứng hover nhẹ ===== */
+.label-admission:hover,
+.label-management:hover,
+.label-system:hover {
+    -fx-opacity: 0.85;
+}
+
+.childrenPane{
+    -fx-background-color: #f3f4f6;   /* nền xám nhạt */
+        -fx-background-radius: 16;       /* bo góc */
+        -fx-border-radius: 16;
+        -fx-border-color: #e5e7eb;       /* viền xám nhẹ */
+        -fx-border-width: 1;
+        -fx-padding: 25;
+        /* đổ bóng nhẹ */
+        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0.3, 0, 4);
+}
+.login-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius:10;
+    -fx-background-radius: 10;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+    -fx-background-insets: 0;
+    -fx-border-color: black;
+}
+.btn{
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-border-radius:4;
+    -fx-background-radius: 10;
+    -fx-padding: 4 10 4 10;
+    -fx-cursor: hand;
+    -fx-background-insets: 0;
+    -fx-border-color: black;
+}
+.btn-2 {
+    -fx-font-size: 14px;
+    -fx-border-radius: 4;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-background-insets: 0;
+}
+.btn-status {
+    -fx-pref-width: 140px;
+    -fx-pref-height: 35px;
+
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 10 0 35;
+}
+
+/* ONLINE */
+.btn-online {
+    -fx-background-color: #52c41a; /* xanh lá */
+}
+
+/* OFFLINE */
+.btn-offline {
+    -fx-background-color: #ff4d4f; /* đỏ */
+}
+
+/* hover */
+.btn-online:hover {
+    -fx-background-color: #73d13d;
+}
+
+.btn-offline:hover {
+    -fx-background-color: #ff7875;
+}
+
+/* TRẠNG THÁI ĐÓNG */
+.btn-close {
+    -fx-background-color: #ff4d4f;
+    -fx-text-fill: white;
+    -fx-border-color: #ff4d4f;
+}
+
+/* TRẠNG THÁI MỞ */
+.btn-open {
+    -fx-background-color: #52c41a;
+    -fx-text-fill: white;
+    -fx-border-color: #52c41a;
+}
+
+/* hover cho đẹp */
+.btn-close:hover {
+    -fx-background-color: #ff7875;
+}
+
+.btn-open:hover {
+    -fx-background-color: #73d13d;
+}
+.done-btn{
+    -fx-background-color: #009029;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-padding: 4 10 4 10;
+    -fx-cursor: hand;
+    -fx-background-insets: 0;
+}
+.btn:hover {
+    -fx-border-color: linear-gradient(to right, #4f46e5, #3b82f6);
+    -fx-text-fill: linear-gradient(to right, #4f46e5, #3b82f6) ;
+}
+.logout-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 10;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+.logout-btn:hover {
+    -fx-background-color: rgba(239,68,68,0.15);
+    -fx-text-fill: #dc2626;
+}
+.nav-menu{
+    -fx-background-color: #e9eaec;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: transparent;
+    -fx-padding: 4 10;
+}
+.back-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3b82f6;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.search-button {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 8 20;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.search-button:hover {
+    -fx-background-color: #1e293b;
+}
+.menu-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cbd5f5;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 10 15;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+}
+.avatar-menu {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+.image-view {
+    -fx-background-radius: 50%;
+}
+.menu-btn:hover {
+    -fx-background-color: rgba(59,130,246,0.2);
+    -fx-text-fill: white;
+}
+.menu-btn-active {
+    -fx-background-color: linear-gradient(to right, #3b82f6, #2563eb);
+    -fx-text-fill: white;
+}
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #0f172a, #1e293b);
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+.combo-box {
+    -fx-background-color: #e9eaec;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: transparent;
+    -fx-padding: 4 10;
+}
+
+/* Text trong ComboBox */
+.combo-box .list-cell {
+    -fx-text-fill: #000;
+    -fx-font-size: 14px;
+}
+
+/* Arrow button */
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+/* Arrow */
+.combo-box .arrow {
+    -fx-background-color: #333;
+}
+/* Tổng thể bảng */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Header của bảng */
+.table-view .column-header-background {
+    -fx-background-color: #f8f9fa; /* Màu nền nhạt cho header */
+    -fx-background-insets: 0 0 1 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 40; /* Độ cao header */
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #495057;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Tùy chỉnh các dòng (Rows) */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 0 0 1 0; /* Tạo đường kẻ dưới mỗi dòng */
+    -fx-padding: 10 0 10 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #ffffff;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #f1f3f5; /* Hiệu ứng hover */
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #e9ecef;
+    -fx-text-background-fill: black;
+}
+
+/* Tùy chỉnh các ô (Cells) */
+.table-cell {
+    -fx-border-color: transparent;
+    -fx-padding: 2 3 2 3;
+    -fx-text-fill: #212529;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Loại bỏ vạch ngăn cách giữa các cột */
+.table-view .column-header {
+    -fx-border-color: transparent;
+}
+/* Style chung cho tất cả các Badge */
+.badge {
+    -fx-padding: 2 6 2 6;
+    -fx-background-radius: 12;
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+}
+
+/* Badge Trúng tuyển (Màu đen hoặc xanh đậm) */
+.badge-success {
+    -fx-background-color: #1a1a1a;
+    -fx-text-fill: #ffffff;
+}
+
+/* Badge Đang chờ (Màu xám/xanh nhạt) */
+.badge-pending {
+    -fx-background-color: #e9ecef;
+    -fx-text-fill: #495057;
+}
+
+/* Badge Không đạt (Màu đỏ nhạt/hồng) */
+.badge-rejected {
+    -fx-background-color: #fff5f5;
+    -fx-text-fill: #fa5252;
+    -fx-border-color: #ffa8a8;
+    -fx-border-radius: 12;
+}
+
+/* Badge cho các ngành học (Màu xanh dương) */
+.badge-info {
+    -fx-padding: 2 6 2 6;
+    -fx-background-color: #e7f5ff;
+    -fx-text-fill: #1971c2;
+    -fx-border-color: #a5d8ff;
+    -fx-border-radius: 12;
+
+}
+/* Item row đẹp hơn */
+.card-item {
+    -fx-background-color: white;
+    -fx-padding: 12 15;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 1;
+}
+
+/* Hover effect */
+.card-item:hover {
+    -fx-background-color: #f9fafb;
+}
+
+/* Nút xoá */
+.btn-danger {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 6 12;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #dc2626;
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="760.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ams.ams_app.controller.SystemController">
+    <children>
+        <VBox spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <padding>
+                <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+            </padding>
+            <children>
+                <!-- Header -->
+                <Pane prefHeight="80.0" styleClass="childrenPane" stylesheets="@../../css/style.css">
+                    <children>
+                        <Label layoutX="25.0" layoutY="22.0" styleClass="title-label" text="Cài đặt &amp; Thông tin hệ thống">
+                            <font>
+                                <Font name="System Bold" size="26.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+
+                <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <!-- Cột 1: Thông tin Backend & App -->
+                        <VBox spacing="20.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <VBox spacing="8.0" styleClass="childrenPane" stylesheets="@../../css/style.css" VBox.vgrow="ALWAYS">
+                                    <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                                    <children>
+                                        <Label styleClass="title-label" text="Backend" />
+                                        <Label fx:id="lblBackendSpecs" styleClass="subtitle-label" wrapText="true" />
+                                        <Separator />
+                                        <Label fx:id="lblBaseUrl" styleClass="subtitle-label" />
+                                        <Label fx:id="lblStatus" styleClass="subtitle-label" />
+                                        <Button fx:id="btnCheckConnection" onAction="#handleCheckConnection" prefHeight="35.0" prefWidth="200.0" styleClass="btn-2" text="Thử kết nối lại" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="8.0" styleClass="childrenPane" stylesheets="@../../css/style.css" VBox.vgrow="ALWAYS">
+                                    <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                                    <children>
+                                        <Label styleClass="title-label" text="Application" />
+                                        <Label fx:id="lblAppName" styleClass="subtitle-label" />
+                                        <Label fx:id="lblVersion" styleClass="subtitle-label" />
+                                        <Label fx:id="lblAppSpecs" styleClass="subtitle-label" wrapText="true" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Cột 2: Người dùng hiện tại -->
+                        <VBox spacing="20.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <VBox spacing="10.0" styleClass="childrenPane" stylesheets="@../../css/style.css" VBox.vgrow="ALWAYS">
+                                    <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                                    <children>
+                                        <Label styleClass="title-label" text="User" />
+                                        <Label fx:id="lblUserId" styleClass="subtitle-label" />
+                                        <Label fx:id="lblUserFullName" styleClass="subtitle-label" />
+                                        <Label fx:id="lblUsername" styleClass="subtitle-label" />
+                                        <Label fx:id="lblUserStatus" styleClass="subtitle-label" />
+                                        <Label fx:id="lblUserCreatedAt" styleClass="subtitle-label" />
+                                        <Label fx:id="lblRole" styleClass="subtitle-label" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Cột 3: Môi trường & Quản trị -->
+                        <VBox spacing="20.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <VBox spacing="8.0" styleClass="childrenPane" stylesheets="@../../css/style.css" VBox.vgrow="ALWAYS">
+                                    <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                                    <children>
+                                        <Label styleClass="title-label" text="System" />
+                                        <Label fx:id="lblOS" styleClass="subtitle-label" />
+                                        <Label fx:id="lblJava" styleClass="subtitle-label" />
+                                        <Label fx:id="lblLang" styleClass="subtitle-label" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="15.0" styleClass="childrenPane" stylesheets="@../../css/style.css" VBox.vgrow="ALWAYS">
+                                    <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+                                    <children>
+                                        <Label styleClass="title-label" text="Cache" />
+                                        <Button onAction="#handleClearCache" prefHeight="35.0" prefWidth="200.0" styleClass="btn-delete" text="Xoá dữ liệu Cache" />
+                                        <Separator />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

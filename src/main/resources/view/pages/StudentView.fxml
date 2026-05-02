@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ams.ams_app.controller.StudentController">
+    <children>
+        <!-- VBox chính neo 4 cạnh để tự co dãn theo Center của BorderPane -->
+        <VBox spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox spacing="2.0">
+                    <children>
+                        <Label maxWidth="1.7976931348623157E308" styleClass="title-label" stylesheets="@../../css/style.css" text="Danh sách các thí sinh">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label styleClass="subtitle-label" stylesheets="@../../css/style.css" text="Danh sách các thí sinh tham gia tuyển sinh" />
+                    </children>
+                </VBox>
+
+                <VBox spacing="10.0" styleClass="childrenPane" stylesheets="@../../css/style.css">
+                    <children>
+                        <Label prefHeight="33.0" prefWidth="192.0" stylesheets="@../../css/style.css" text="Tìm kiếm &amp; lọc :">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                            <children>
+                                <!-- TextField sẽ tự dài ra để lấp đầy không gian ngang -->
+                                <TextField fx:id="searchField" onAction="#handleSearch" prefHeight="35.0" promptText="Tìm theo tên hoặc cccd..." styleClass="search-field" stylesheets="@../../css/style.css" HBox.hgrow="ALWAYS" />
+                                <MenuButton fx:id="filterByStatusBtn" mnemonicParsing="false" prefHeight="34.0" prefWidth="234.0" stylesheets="@../../css/style.css" text="Tất cả trạng thái">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#handleFilter" text="Tất cả trạng thái" />
+                                        <MenuItem mnemonicParsing="false" onAction="#handleFilter" text="Trúng tuyển" />
+                                        <MenuItem mnemonicParsing="false" onAction="#handleFilter" text="Đã trượt" />
+                                        <MenuItem mnemonicParsing="false" onAction="#handleFilter" text="Đang chờ" />
+                                    </items>
+                                    <styleClass>
+                                        <String fx:value="combo-box" />
+                                        <String fx:value="arrow-button" />
+                                    </styleClass>
+                                </MenuButton>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                </VBox>
+
+                <!-- TableView tự giãn chiều cao để lấp đầy vùng Center (VBox.vgrow="ALWAYS") -->
+                <TableView fx:id="tableView" stylesheets="@../../css/style.css" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colId" minWidth="50.0" prefWidth="60.0" text="ID" />
+                        <TableColumn fx:id="colCitizenIdCard" minWidth="100.0" prefWidth="120.0" text="CCCD" />
+                        <TableColumn fx:id="colRegistrationNumber" minWidth="80.0" prefWidth="100.0" text="SBD" />
+                        <TableColumn fx:id="colName" minWidth="150.0" prefWidth="200.0" text="Họ Tên" />
+                        <TableColumn fx:id="colGender" minWidth="50.0" prefWidth="70.0" text="Giới tính" />
+                        <TableColumn fx:id="colDob" minWidth="80.0" prefWidth="100.0" text="Ngày sinh" />
+                        <TableColumn fx:id="colEnrollmentYear" minWidth="50.0" prefWidth="60.0" text="Năm" />
+                        <TableColumn fx:id="colMatriculateStatus" minWidth="100.0" prefWidth="120.0" text="Trạng thái" />
+                        <TableColumn fx:id="colAction" maxWidth="100.0" minWidth="80.0" prefWidth="80.0" text="Chi tiết" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                    <styleClass>
+                        <String fx:value="table-view" />
+                        <String fx:value="table-cell" />
+                        <String fx:value="table-row-cell" />
+                    </styleClass>
+                </TableView>
+
+                <Pagination fx:id="pagination" prefHeight="50.0" />
+            </children>
+        </VBox>
+    </children>
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+</AnchorPane>

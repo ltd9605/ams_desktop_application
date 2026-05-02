@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ams.ams_app.controller.WelcomeController">
+    <children>
+        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <!-- Header -->
+                <HBox alignment="CENTER_LEFT" prefHeight="110.0" styleClass="nav-tab" stylesheets="@../css/style.css">
+                    <children>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                            <HBox.margin><Insets left="50.0" right="20.0" /></HBox.margin>
+                            <image><Image url="@../image/6785648.png" /></image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label styleClass="title-label" text="Admission Management System" />
+                                <Label styleClass="subtitle-label" text="Sai Gon University" />
+                            </children>
+                        </VBox>
+                        <Button mnemonicParsing="false" onAction="#handleLogin" prefHeight="40.0" prefWidth="120.0" styleClass="btn" text="LOGIN">
+                            <HBox.margin><Insets right="50.0" /></HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+
+                <!-- Main Content Area -->
+                <VBox alignment="CENTER" spacing="30.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox maxWidth="900.0" spacing="15.0" styleClass="childrenPane" stylesheets="@../css/style.css">
+                            <children>
+                                <Label text="Tra cứu kết quả">
+                                    <font><Font name="System Bold" size="24.0" /></font>
+                                </Label>
+                                <Label styleClass="subtitle-label" text="Nhập số báo danh hoặc email để tra cứu kết quả tuyển sinh của bạn" />
+                                <HBox spacing="10.0">
+                                    <children>
+                                        <TextField fx:id="txtRegistrationNumber" maxWidth="1.7976931348623157E308" prefHeight="45.0" prefWidth="327.0" promptText="Nhập số báo danh" styleClass="search-field" HBox.hgrow="ALWAYS" />
+                                        <TextField fx:id="txtCitizenId" prefHeight="45.0" prefWidth="336.0" promptText="Nhập số CCCD" styleClass="search-field" />
+                                        <Button onAction="#handleSearch" mnemonicParsing="false" prefHeight="45.0" prefWidth="120.0" styleClass="search-button" text="Tra cứu" />
+                                    </children>
+                                </HBox>
+                            </children>
+                            <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
+                        </VBox>
+
+                        <!-- Trong WelcomeView.fxml -->
+                        <VBox fx:id="paneInstruction" maxWidth="900.0" spacing="10.0" styleClass="childrenPane">
+                            <children>
+                                <Label fx:id="lblInstructionTitle" text="Hướng dẫn tra cứu">
+                                    <font><Font name="System Bold" size="18.0" /></font>
+                                </Label>
+                                <VBox fx:id="vboxInstructionContent" spacing="8.0">
+                                    <children>
+                                        <Label fx:id="lblStep1" styleClass="subtitle-label" text="1. Nhập số báo danh hoặc email chính xác của thí sinh." />
+                                        <Label fx:id="lblStep2" styleClass="subtitle-label" text="2. Nhấn nút &quot;Tra cứu&quot; để hệ thống xử lý thông tin." />
+                                        <Label fx:id="lblStep3" styleClass="subtitle-label" text="3. Kết quả sẽ hiển thị chi tiết điểm số và trạng thái trúng tuyển." />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+
+                <!-- Footer -->
+                <HBox alignment="CENTER" prefHeight="60.0" styleClass="nav-tab">
+                    <children>
+                        <Label text="© 2026 Admissions Management System. All rights reserved." />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
