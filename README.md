@@ -80,7 +80,7 @@ Make sure you have the following installed:
 git clone https://github.com/ltd9605/ams_desktop_application.git
 cd ams_desktop_application
 ```
-###⚙️ 2. Configure Backend Connection
+### ⚙️ 2. Configure Backend Connection
 Open project in your IDE (recommended: IntelliJ IDEA)
 
 Go to:
@@ -93,19 +93,26 @@ Update base URL if needed:
 ```bash
 private static final String BASE_URL = "your_backend_base_url";
 ```
-###🚀 3. Run the Application
+### 🚀 3. Run the Application
 Using Maven:
 ```bash
 mvn clean install
 mvn javafx:run
 ```
 Or run Main.java directly from your IDE.
-###🌐 4. Backend Setup (Required)
+
+### 🌐 4. Backend Setup (Required)
+
 Make sure backend is running before using online features
-###🧪 5. Verify Setup
+
+### 🧪 5. Verify Setup
+
 Launch the app
+
 Try:
+
 Login
+
 View dashboard
 
 If everything works → setup successful ✅
