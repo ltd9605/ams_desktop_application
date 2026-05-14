@@ -37,7 +37,7 @@ public class ImportController {
     @FXML
     private void handleChooseFile() {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Chọn file Excel");
+        fileChooser.setTitle("Chọn file");
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Excel Files", "*.xlsx", "*.xls", "*.csv")
         );
