@@ -9,11 +9,19 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class AdmissionService {
-    public ArrayList<AdmissionPlanDTO> getAdmissionPlansList() throws Exception {
+    public ArrayList<AdmissionPlanDTO> getAdmissionPlansList(String searchTerm, String academicYear) throws Exception {
         try {
             int limit = getTotal();
-            String url = "/admission-plans?limit="+limit+"&offset=0";
-            ApiResponseDTO<?> response = ApiClient.get(url);
+            // Xây dựng URL với query parameters
+            StringBuilder urlBuilder = new StringBuilder("/admission-plans?limit=" + limit + "&offset=0");
+
+            if (searchTerm != null && !searchTerm.isEmpty()) {
+                urlBuilder.append("&searchTerm=").append(java.net.URLEncoder.encode(searchTerm, "UTF-8"));
+            }
+            if (academicYear != null && !academicYear.isEmpty()) {
+                urlBuilder.append("&academicYear=").append(java.net.URLEncoder.encode(academicYear, "UTF-8"));
+            }
+            ApiResponseDTO<?> response = ApiClient.get(urlBuilder.toString());
             if (response.isSuccess()) {
                 JSONObject data = (JSONObject) response.getData();
                 ArrayList<AdmissionPlanDTO> list = new ArrayList<>();
@@ -47,6 +55,9 @@ public class AdmissionService {
             e.printStackTrace();
         }
         return new ArrayList<AdmissionPlanDTO>();
+    }
+    public ArrayList<AdmissionPlanDTO> getAdmissionPlansList() throws Exception {
+        return getAdmissionPlansList(null, null);
     }
     public AdmissionPlanDetailDTO getDetail(String id) throws Exception {
         try {
