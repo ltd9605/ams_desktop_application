@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ams.ams_app.controller.MainLayoutController">
     <children>
@@ -20,7 +21,7 @@
 
         <BorderPane fx:id="mainPane" stylesheets="@../css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
-                <HBox alignment="CENTER_LEFT" prefHeight="80.0" styleClass="nav-tab" BorderPane.alignment="CENTER">
+                <HBox alignment="CENTER_LEFT" prefHeight="127.0" prefWidth="1080.0" styleClass="nav-tab" BorderPane.alignment="CENTER">
                     <children>
                         <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                             <HBox.margin><Insets left="20.0" right="20.0" /></HBox.margin>
@@ -32,10 +33,13 @@
                                 <Label styleClass="subtitle-label" text="Sai Gon University" />
                             </children>
                         </VBox>
-                        <HBox alignment="CENTER_RIGHT" spacing="15.0" HBox.hgrow="ALWAYS">
+                        <HBox alignment="CENTER_RIGHT" prefHeight="127.0" prefWidth="362.0" spacing="15.0" HBox.hgrow="ALWAYS">
                             <children>
-                                <Label text="Hello!" />
-                                <Label fx:id="lbUsername" styleClass="title-label" text="Admin" />
+                                <Label prefHeight="127.0" prefWidth="78.0" text="Hello!">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
+                                <Label fx:id="lbUsername" prefHeight="127.0" prefWidth="319.0" styleClass="title-label" text="Admin" />
                                 <ImageView fx:id="avatarImg" fitHeight="42.0" fitWidth="42.0">
                                     <image><Image url="@../image/admin-avata.png" /></image>
                                 </ImageView>
@@ -51,6 +55,7 @@
                     <children>
                         <Button fx:id="btnDashboard" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoDashboard" styleClass="menu-btn" text="Tổng quan" />
                         <Button fx:id="btnStudentList" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoStudents" styleClass="menu-btn" text="Danh sách học sinh" />
+                        <Button fx:id="btnMajorList" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoMajors" styleClass="menu-btn" text="Danh sách ngành" />
                         <Button fx:id="btnAdmission" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoAdmission" styleClass="menu-btn" text="Xét tuyển" />
                         <Button fx:id="btnPrint" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoPrint" styleClass="menu-btn" text="In giấy báo" />
                         <Button fx:id="btnUserMgmt" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#gotoUser" styleClass="menu-btn" text="Người dùng" />
