@@ -32,8 +32,8 @@
                 <!-- Thanh công cụ chọn kế hoạch và ngành -->
                 <HBox alignment="CENTER_LEFT" spacing="15.0">
                     <children>
-                        <MenuButton fx:id="planMenuButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="250.0" styleClass="combo-box" text="Chọn kế hoạch" HBox.hgrow="SOMETIMES" />
-                        <MenuButton fx:id="majorMenuButton" disable="true" mnemonicParsing="false" prefHeight="35.0" prefWidth="250.0" styleClass="combo-box" stylesheets="@../../css/style.css" text="Chọn ngành " HBox.hgrow="SOMETIMES" />
+                        <MenuButton fx:id="planMenuButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="371.0" styleClass="combo-box" text="Chọn kế hoạch" HBox.hgrow="SOMETIMES" />
+                        <MenuButton fx:id="majorMenuButton" disable="true" mnemonicParsing="false" prefHeight="35.0" prefWidth="368.0" styleClass="combo-box" stylesheets="@../../css/style.css" text="Chọn ngành " HBox.hgrow="SOMETIMES" />
                         <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                             <children>
                                 <Button mnemonicParsing="false" onAction="#handleReset" prefHeight="35.0" styleClass="btn-2" text="Đặt lại" />

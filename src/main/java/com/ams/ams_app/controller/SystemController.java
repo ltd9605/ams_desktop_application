@@ -1,5 +1,6 @@
 package com.ams.ams_app.controller;
 
+import com.ams.ams_app.config.Config;
 import com.ams.ams_app.dto.UserDTO;
 import com.ams.ams_app.session.UserSession;
 import com.ams.ams_app.util.NetworkUtil;
@@ -11,7 +12,6 @@ import java.io.File;
 public class SystemController {
 
     @FXML private Label lblAppName, lblVersion, lblAppSpecs, lblBaseUrl, lblStatus, lblBackendSpecs;
-    @FXML private Label lblUserId, lblUserFullName, lblUsername, lblUserStatus, lblUserCreatedAt, lblRole;
     @FXML private Label lblOS, lblJava, lblLang;
     @FXML private Button btnCheckConnection;
     @FXML private ToggleButton btnThemeMode;
@@ -20,39 +20,25 @@ public class SystemController {
     public void initialize() {
         loadBackendInfo();
         loadAppInfo();
-        loadUserInfo();
         loadEnvironmentInfo();
         updateStatusUI();
     }
 
     private void loadBackendInfo() {
         lblBackendSpecs.setText("• Language: Java 25\n• Framework: Spring Boot 4.0.5\n• Security: JWT, Spring Security\n• DB: PostgreSQL\n• ORM: Hibernate\n• Tool: Docker, Maven");
-        String baseUrl = System.getenv("BASE_URL");
-        if (baseUrl == null) baseUrl = "http://localhost:3000/api/v1";
+        String baseUrl = Config.get("API_BASE_URL");
+        if (baseUrl == null) baseUrl = "BACKEND_API_BASE_URL";
         lblBaseUrl.setText("URL: " + baseUrl);
     }
 
     private void loadAppInfo() {
         lblAppName.setText("Tên ứng dụng: AMS System");
-        lblVersion.setText("Phiên bản: 1.0.0");
+        String version = Config.get("APP_VERSION");
+        lblVersion.setText("Phiên bản: "+ version);
         lblAppSpecs.setText("• UI: JavaFX 25\n• Network: HttpClient\n• Parser: Jackson/JSON\n• Auth: Cookie-based JWT");
     }
-
-    private void loadUserInfo() {
-        UserSession session = UserSession.getInstance();
-        if (session != null && session.getUserInfor() != null) {
-            UserDTO user = session.getUserInfor();
-            lblUserId.setText("ID: " + user.getId());
-            lblUserFullName.setText("Họ tên: " + user.getFullName());
-            lblUsername.setText("Username: " + user.getUsername());
-            lblUserStatus.setText("Trạng thái: " + (user.getLocked() ? "Đã khoá" : "Hoạt động"));
-            lblUserCreatedAt.setText("Ngày tạo: " + user.getCreatedAt());
-            lblRole.setText("Vai trò: " + String.join(", ", user.getRoleIds()));
-        }
-    }
-
     private void loadEnvironmentInfo() {
-        lblOS.setText("OS: " + System.getProperty("os.name") + " (v" + System.getProperty("os.version") + ")");
+        lblOS.setText("OS: " + System.getProperty("os.name") + " (version :" + System.getProperty("os.version") + ")");
         lblJava.setText("Runtime: Java " + System.getProperty("java.version"));
         lblLang.setText("Language: " + System.getProperty("user.language").toUpperCase());
     }

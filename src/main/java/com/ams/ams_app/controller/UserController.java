@@ -24,12 +24,12 @@ public class UserController {
 
     @FXML private TableView<UserDTO> userTable;
     @FXML private TableColumn<UserDTO, String> colId, colFullName, colUsername, colStatus, colCreatedAt, colCreatedBy, colAction;
-    @FXML private Button btnAddUser;
-
+    @FXML private Label lblUserId, lblUserFullName, lblUsername, lblUserStatus, lblUserCreatedAt, lblRole;
     @FXML
     public void initialize() {
         setupTable();
         loadUsers();
+        loadCurrentUserInfo();
     }
     private void setupTable() {
         colId.setCellValueFactory(d -> new SimpleStringProperty(d.getValue().getId()));
@@ -87,7 +87,22 @@ public class UserController {
         });
     }
 
-
+    private void loadCurrentUserInfo() {
+        UserSession session = UserSession.getInstance();
+        if (session != null && session.getUserInfor() != null) {
+            UserDTO user = session.getUserInfor();
+            lblUserId.setText("ID: " + user.getId());
+            lblUserId.getStyleClass().add("subtitle-label");
+            lblUserFullName.setText("Họ tên: " + user.getFullName());
+            lblUserFullName.getStyleClass().add("subtitle-label");
+            lblUsername.setText("Username: " + user.getUsername());
+            lblUsername.getStyleClass().add("subtitle-label");
+            lblUserStatus.setText("Trạng thái: " + (user.getLocked() ? "Đã khoá" : "Hoạt động"));
+            lblUserStatus.getStyleClass().add("subtitle-label");
+            lblUserCreatedAt.setText("Ngày tạo: " + user.getCreatedAt());
+            lblUserCreatedAt.getStyleClass().add("subtitle-label");
+        }
+    }
     private void loadUsers() {
         new Thread(() -> {
             try {

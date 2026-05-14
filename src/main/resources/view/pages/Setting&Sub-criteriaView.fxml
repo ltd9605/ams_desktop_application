@@ -37,7 +37,7 @@
                                 <Font name="System Bold" size="16.0" />
                             </font>
                         </Label>
-                        <MenuButton fx:id="planMenuButton" layoutX="160.0" layoutY="13.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="350.0" styleClass="combo-box" text="Danh sách các kế hoạch">
+                        <MenuButton fx:id="planMenuButton" layoutX="160.0" layoutY="13.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="645.0" styleClass="combo-box" text="Danh sách các kế hoạch">
                             <items>
                                 <MenuItem mnemonicParsing="false" text="Action 1" />
                                 <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -91,7 +91,7 @@
                             <children>
                                 <Label styleClass="subtitle-label" text="Tổ hợp xét tuyển :" />
                                 <VBox fx:id="combinationContainer" spacing="10.0" VBox.vgrow="ALWAYS" />
-                                <VBox spacing="10.0" alignment="BOTTOM_CENTER">
+                                <VBox alignment="BOTTOM_CENTER" spacing="10.0">
                                     <children>
                                         <Button fx:id="btnStatus" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeStatus" prefHeight="35.0" styleClass="btn-2" text="Trạng thái" />
                                         <HBox spacing="10.0">

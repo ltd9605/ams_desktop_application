@@ -50,26 +50,6 @@
                                 </VBox>
                             </children>
                         </VBox>
-
-                        <!-- Cột 2: Người dùng hiện tại -->
-                        <VBox spacing="20.0" HBox.hgrow="ALWAYS">
-                            <children>
-                                <VBox spacing="10.0" styleClass="childrenPane" stylesheets="@../../css/style.css" VBox.vgrow="ALWAYS">
-                                    <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
-                                    <children>
-                                        <Label styleClass="title-label" text="User" />
-                                        <Label fx:id="lblUserId" styleClass="subtitle-label" />
-                                        <Label fx:id="lblUserFullName" styleClass="subtitle-label" />
-                                        <Label fx:id="lblUsername" styleClass="subtitle-label" />
-                                        <Label fx:id="lblUserStatus" styleClass="subtitle-label" />
-                                        <Label fx:id="lblUserCreatedAt" styleClass="subtitle-label" />
-                                        <Label fx:id="lblRole" styleClass="subtitle-label" />
-                                    </children>
-                                </VBox>
-                            </children>
-                        </VBox>
-
-                        <!-- Cột 3: Môi trường & Quản trị -->
                         <VBox spacing="20.0" HBox.hgrow="ALWAYS">
                             <children>
                                 <VBox spacing="8.0" styleClass="childrenPane" stylesheets="@../../css/style.css" VBox.vgrow="ALWAYS">
