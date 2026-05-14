@@ -52,7 +52,10 @@ public class ChangePasswordController {
             showError("Vui lòng nhập đầy đủ mật khẩu cũ và mới!");
             return;
         }
-
+        if (oldPass.length() < 8 || oldPass.isBlank() || newPass.length() < 8 || newPass.isBlank()) {
+            showError("Mật khẩu ít nhất 8 kí tự!");
+            return;
+        }
         lbError.setVisible(false);
         btnSave.setDisable(true);
 
