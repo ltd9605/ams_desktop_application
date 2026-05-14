@@ -96,27 +96,48 @@ public class MainLayoutController {
         btnLogout.setGraphic(logoutIcon);
     }
     @FXML
-    private void handleLogout() {
-        UserSession current = UserSession.getInstance();
-        System.out.println("Current User : "+ current.getUserInfor().toString());
-        new Thread(() -> {
-            if(current == null){
-                System.out.println("Session null");
-            }
-            else {
-                javafx.application.Platform.runLater(() -> btnLogout.setDisable(true));
-                boolean result = AuthService.logout(current.getInstance());
-                if (result) {
-                    javafx.application.Platform.runLater(() -> {
-                        SceneManager.gotoLogin();
-                    });
-                } else {
-                    javafx.application.Platform.runLater(() -> btnLogout.setDisable(false));
-                }
-            }
+private void handleLogout() {
 
-        }).start();
+    Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+    confirmAlert.setTitle("Xác nhận đăng xuất");
+    confirmAlert.setHeaderText(null);
+    confirmAlert.setContentText("Bạn có chắc chắn muốn đăng xuất?");
+
+    boolean confirmed = confirmAlert.showAndWait()
+            .filter(response -> response == javafx.scene.control.ButtonType.OK)
+            .isPresent();
+
+    if (!confirmed) {
+        return;
     }
+
+    UserSession current = UserSession.getInstance();
+
+    System.out.println("Current User : " + current.getUserInfor().toString());
+
+    new Thread(() -> {
+
+        if (current == null) {
+            System.out.println("Session null");
+        } else {
+
+            javafx.application.Platform.runLater(() ->
+                    btnLogout.setDisable(true)
+            );
+
+            boolean result = AuthService.logout(current.getInstance());
+
+            if (result) {
+                javafx.application.Platform.runLater(SceneManager::gotoLogin);
+            } else {
+                javafx.application.Platform.runLater(() ->
+                        btnLogout.setDisable(false)
+                );
+            }
+        }
+
+    }).start();
+}
     public void setUserName(String fullName) {
         lbUsername.setText(fullName);
     }
