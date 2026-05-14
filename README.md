@@ -81,17 +81,14 @@ git clone https://github.com/ltd9605/ams_desktop_application.git
 cd ams_desktop_application
 ```
 ### ⚙️ 2. Configure Backend Connection
-Open project in your IDE (recommended: IntelliJ IDEA)
+Create a `.env` file in the project root directory & copy from the example file:
 
-Go to:
-
-src/main/java/com/ams/ams_app/network/ApiClient.java
-
-src/main/java/com/ams/ams_app/util/NetworkUtil.java
-
-Update base URL if needed:
 ```bash
-private static final String BASE_URL = "your_backend_base_url";
+cp .env.example .env
+```
+Update base URL:
+```bash
+API_BASE_URL=http://your-backend-api-url/api/v1
 ```
 ### 🚀 3. Run the Application
 Using Maven:
