@@ -159,7 +159,7 @@ public class ApiClient {
     // METHOD POST() - User for UPLOAD FILE
     public static ApiResponseDTO<?> uploadFile(String endpoint, File file) throws Exception {
         String token = (UserSession.getInstance() != null) ? UserSession.getInstance().getToken() : "";
-        String boundary = "===" + System.currentTimeMillis() + "===";
+        String boundary = "---" + System.currentTimeMillis() + "---";
         String LINE_FEED = "\r\n";
 
         URL url = new URL(BASE_URL + endpoint);
