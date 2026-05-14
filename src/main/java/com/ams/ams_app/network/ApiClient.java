@@ -1,5 +1,6 @@
 package com.ams.ams_app.network;
 
+import com.ams.ams_app.config.Config;
 import com.ams.ams_app.services.AuthService;
 import com.ams.ams_app.dto.ApiResponseDTO;
 import com.ams.ams_app.session.UserSession;
@@ -20,8 +21,7 @@ import java.util.function.Supplier;
 public class ApiClient {
 
     private static final HttpClient client = HttpClient.newHttpClient();
-    private static final String BASE_URL = "http://localhost:3000/api/v1";
-
+    public static final String BASE_URL = Config.get("API_BASE_URL");
     private static ApiResponseDTO<?> executeRequest(Supplier<HttpRequest> requestSupplier) throws Exception {
        try {
            // Send request
