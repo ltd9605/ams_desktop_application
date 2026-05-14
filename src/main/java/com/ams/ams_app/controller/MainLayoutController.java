@@ -41,6 +41,8 @@ public class MainLayoutController {
         setCenterWithLock("/view/pages/StudentView.fxml");
     }
     @FXML
+    private void gotoMajors(){setCenterWithLock("/view/pages/MajorView.fxml");}
+    @FXML
     private void gotoAdmission() {
         setCenterWithLock("/view/pages/Setting&Sub-criteriaView.fxml");
     }
